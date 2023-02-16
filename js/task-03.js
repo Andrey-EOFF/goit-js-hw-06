@@ -13,14 +13,12 @@ const images = [
   },
 ];
 
-const imagesList = document.querySelector(".gallery");
+const gallery = document.querySelector('.gallery');
 
-const elements = images.map((imageGallery) => {
-  const imageGalleryItem = document.createElement("li");
-
-  return imageGalleryItem;
+const galleryItems = images.map(image => {
+  return `<li><img src="${image.url}" alt="${image.alt}"></li>`;
 });
 
-ingredientsList.append(...elements);
+gallery.insertAdjacentHTML('beforeend', galleryItems.join(''));
 
-console.log(elements);
+console.log(gallery);
