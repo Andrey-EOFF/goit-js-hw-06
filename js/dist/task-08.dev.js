@@ -1,18 +1,21 @@
-"use strict";
+const form = document.querySelector(".login-form");
 
-var form = document.querySelector(".login-form");
-form.addEventListener("submit", handleSubmit);
-
-function handleSubmit(event) {
+form.addEventListener("sambit", (event) => {
   event.preventDefault();
-  var _event$currentTarget$ = event.currentTarget.elements,
-      email = _event$currentTarget$.email,
-      password = _event$currentTarget$.password;
 
-  if (email.value === "" || password.value === "") {
-    return console.log("Please fill in all the fields!");
+  const emailInput = form.elements.email;
+  const passwordInput = loginForm.elements.password;
+
+  if (emailInput.value === "" && passwordInput.value === "") {
+    return alert('Всі поля повинні бути заповнені');
   }
 
-  console.log("email: ".concat(email.value, ", Password: ").concat(password.value));
-  event.currentTarget.reset();
-}
+  const formData = {
+    email: emailInput.value,
+    password: passwordInput.value,
+  };
+
+  console.log(formData);
+
+  form.reset();
+});
