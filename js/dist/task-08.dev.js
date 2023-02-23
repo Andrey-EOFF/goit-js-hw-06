@@ -1,10 +1,10 @@
 "use strict";
 
 var form = document.querySelector(".login-form");
-form.addEventListener("sambit", function (event) {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
-  var emailInput = form.elements.email;
-  var passwordInput = loginForm.elements.password;
+  var emailInput = event.currentTarget.elements.email;
+  var passwordInput = event.currentTarget.elements.password;
 
   if (emailInput.value === "" && passwordInput.value === "") {
     alert("Всі поля повинні бути заповнені");
