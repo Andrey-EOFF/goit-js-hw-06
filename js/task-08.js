@@ -1,17 +1,22 @@
 const form = document.querySelector(".login-form");
 
-form.addEventListener("submit", handleSubmit);
-
-function handleSubmit(event) {
+form.addEventListener("sambit", (event) => {
   event.preventDefault();
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
-    return console.log("Please fill in all the fields!");
+  const emailInput = form.elements.email;
+  const passwordInput = loginForm.elements.password;
+
+  if (emailInput.value === "" && passwordInput.value === "") {
+    alert("Всі поля повинні бути заповнені");
+    return;
   }
 
-  console.log(`email: ${email.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
-}
+  const formData = {
+    email: emailInput.value,
+    password: passwordInput.value,
+  };
+
+  console.log(formData);
+
+  form.reset();
+});

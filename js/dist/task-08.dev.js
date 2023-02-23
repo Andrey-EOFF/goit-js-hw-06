@@ -1,21 +1,20 @@
-const form = document.querySelector(".login-form");
+"use strict";
 
-form.addEventListener("sambit", (event) => {
+var form = document.querySelector(".login-form");
+form.addEventListener("sambit", function (event) {
   event.preventDefault();
-
-  const emailInput = form.elements.email;
-  const passwordInput = loginForm.elements.password;
+  var emailInput = form.elements.email;
+  var passwordInput = loginForm.elements.password;
 
   if (emailInput.value === "" && passwordInput.value === "") {
-    return alert('Всі поля повинні бути заповнені');
+    alert("Всі поля повинні бути заповнені");
+    return;
   }
 
-  const formData = {
+  var formData = {
     email: emailInput.value,
-    password: passwordInput.value,
+    password: passwordInput.value
   };
-
   console.log(formData);
-
   form.reset();
 });
